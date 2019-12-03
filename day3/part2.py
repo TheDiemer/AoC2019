@@ -22,11 +22,13 @@ def main(moduleWeight):
         for location, steps in crawl():
             if location not in visited:
                 visited[location] = steps
-        print(min(
-            steps + visited[location]
-            for location, steps in crawl()
-            if location in visited
-        ))
+        print(
+            min(
+                steps + visited[location]
+                for location, steps in crawl()
+                if location in visited
+            )
+        )
 
 
 if __name__ == "__main__":
