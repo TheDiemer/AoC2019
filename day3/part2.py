@@ -4,6 +4,8 @@ from os import path
 from math import floor
 
 
+# Credit where credit is due. I did not figure out this logic on my own.
+# I learned from the code shared by https://www.reddit.com/user/jadenPete/ in the subreddit
 def main(moduleWeight):
     with open(moduleWeight) as opened:
 
