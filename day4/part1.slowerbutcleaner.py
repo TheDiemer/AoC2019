@@ -22,13 +22,15 @@ def main(lower, upper):
             # So long as we are not looking at the first digit
             if place > 0:
                 # check if the current digit is greater than or equal to the digit immediately before it
-                if int(part) >= int(str(number)[place-1]):
+                if int(part) > int(str(number)[place-1]):
                     # If it is then add True to the list
                     increase.append(True)
-                    # Also check if it is specifically the SAME as the digit before
-                    if int(part) == int(str(number)[place - 1]):
-                        # And flip our flag so we now it met this criteria too
-                        double = True
+                # Also check if it is specifically the SAME as the digit before
+                elif int(part) == int(str(number)[place - 1]):
+                    # And flip our flag so we now it met this criteria too
+                    double = True
+                    # If it is then add True to the list
+                    increase.append(True)
                 # otherwise add False to the list
                 else:
                     increase.append(False)
