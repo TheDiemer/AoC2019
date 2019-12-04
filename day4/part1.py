@@ -10,8 +10,8 @@ def main(lower, upper):
     # We will use this to shrink our options down from lower-upper down to a list of numbers that only increase (or remain the same) from left to right
     increasing = []
     # Start by looping over All of the numbers in out range!
-    for number in range(lower, upper+1):
-        # Set this to 0 so we track the position in the 6 digit number 
+    for number in range(lower, upper + 1):
+        # Set this to 0 so we track the position in the 6 digit number
         place = 0
         # Set the array to empty so it starts that way for each number
         increase = []
@@ -20,7 +20,7 @@ def main(lower, upper):
             # So long as we are not looking at the first digit
             if place > 0:
                 # check if the current digit is greater than or equal to the digit immediately before it
-                if int(part) >= int(str(number)[place-1]):
+                if int(part) >= int(str(number)[place - 1]):
                     # If it is then add True to the list
                     increase.append(True)
                 # otherwise add False to the list
@@ -41,7 +41,7 @@ def main(lower, upper):
         # Loop over each digit in the number
         for part in str(number):
             # So long as we are not looking at the first digit
-            if place > 0 :
+            if place > 0:
                 # check if the current digit is the same as the digit right before it
                 if int(part) == int(str(number)[place - 1]):
                     # If it is, flip our flag to True!
@@ -51,7 +51,11 @@ def main(lower, upper):
         # If the double flag is true, increase our answer counter!
         if double:
             answer += 1
-    print("In the range of {0}-{1}, there are {2} possible passwords that meet the criteria".format(lower, upper, answer))
+    print(
+        "In the range of {0}-{1}, there are {2} possible passwords that meet the criteria".format(
+            lower, upper, answer
+        )
+    )
 
 
 if __name__ == "__main__":
